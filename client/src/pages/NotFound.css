@@ -1,0 +1,241 @@
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound-container {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Glitch Effect */
+.glitch-wrapper {
+  margin-bottom: 30px;
+}
+
+.glitch {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary);
+  position: relative;
+  text-shadow: 0 0 30px var(--primary);
+  animation: glitch-skew 1s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--danger);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--secondary);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(10px, 9999px, 31px, 0);
+  }
+  20% {
+    clip: rect(70px, 9999px, 71px, 0);
+  }
+  40% {
+    clip: rect(40px, 9999px, 150px, 0);
+  }
+  60% {
+    clip: rect(90px, 9999px, 20px, 0);
+  }
+  80% {
+    clip: rect(60px, 9999px, 80px, 0);
+  }
+  100% {
+    clip: rect(50px, 9999px, 100px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+  20% {
+    clip: rect(20px, 9999px, 40px, 0);
+  }
+  40% {
+    clip: rect(80px, 9999px, 60px, 0);
+  }
+  60% {
+    clip: rect(30px, 9999px, 90px, 0);
+  }
+  80% {
+    clip: rect(10px, 9999px, 50px, 0);
+  }
+  100% {
+    clip: rect(70px, 9999px, 30px, 0);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(-2deg);
+  }
+  20% {
+    transform: skew(2deg);
+  }
+  30% {
+    transform: skew(0deg);
+  }
+}
+
+.notfound-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--secondary);
+  text-shadow: 0 0 15px var(--secondary);
+}
+
+.notfound-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Animated Background */
+.notfound-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.orbit {
+  position: absolute;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.orbit-1 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 10s linear infinite;
+}
+
+.orbit-2 {
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: var(--secondary);
+  animation: rotate 15s linear infinite reverse;
+}
+
+.orbit-3 {
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: var(--accent);
+  animation: rotate 20s linear infinite;
+}
+
+.center-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px var(--primary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glitch {
+    font-size: 5rem;
+  }
+  
+  .notfound-title {
+    font-size: 1.5rem;
+  }
+  
+  .notfound-text {
+    font-size: 1rem;
+  }
+  
+  .notfound-actions {
+    flex-direction: column;
+  }
+  
+  .notfound-animation {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .orbit-1 {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .orbit-2 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .orbit-3 {
+    width: 170px;
+    height: 170px;
+  }
+}
