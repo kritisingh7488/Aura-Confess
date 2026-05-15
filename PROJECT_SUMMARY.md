@@ -1,8 +1,6 @@
-# 🎮 AuraConfess - Project Complete! 
+# 🎮 AuraConfess
 
 ## ✅ What Has Been Built
-
-A complete MERN stack anonymous confession platform with gamification features!
 
 ### 🔐 Authentication System
 - ✅ Google OAuth 2.0 integration with Passport.js
