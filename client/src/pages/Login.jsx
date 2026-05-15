@@ -3,8 +3,10 @@ import { FaGoogle } from 'react-icons/fa';
 import './Login.css';
 
 const Login = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   const handleGoogleLogin = () => {
-    window.location.href = 'http://localhost:5000/auth/google';
+    window.location.href = `${API_BASE_URL}/auth/google`;
   };
 
   return (

@@ -18,6 +18,8 @@ router.get('/google/callback',
   }),
   (req, res) => {
     try {
+      const isProduction = process.env.NODE_ENV === 'production';
+
       // Generate JWT token
       const token = jwt.sign(
         { userId: req.user._id },
@@ -28,7 +30,8 @@ router.get('/google/callback',
       // Set cookie
       res.cookie('token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
+        secure: isProduction,
+        sameSite: isProduction ? 'none' : 'lax',
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
       });
 
@@ -43,7 +46,12 @@ router.get('/google/callback',
 
 // Logout
 router.post('/logout', (req, res) => {
-  res.clearCookie('token');
+  const isProduction = process.env.NODE_ENV === 'production';
+  res.clearCookie('token', {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax'
+  });
   res.json({ success: true, message: 'Logged out successfully' });
 });
 
