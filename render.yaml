@@ -11,3 +11,17 @@ services:
         value: production
       - key: PORT
         value: 5000
+      - key: CLIENT_URL
+        value: https://aura-confess.vercel.app
+      - key: GOOGLE_CALLBACK_URL
+        value: https://aura-confess.onrender.com/auth/google/callback
+      - key: MONGO_URI
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
