@@ -16,7 +16,7 @@
 - **Trigger**: Automatically locked when receiving 50+ reactions
 - **Visual**: Blurred content with unlock overlay
 - **Access**: 
-  - Free for confession author
+  - Free fqor confession author
   - Free for users who already unlocked it
   - Costs 50 Aura Points for others
 

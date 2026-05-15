@@ -1,7 +1,7 @@
 **Date:** February 23, 2026  
 **Repository:** https://github.com/Agam3705/AuraConfess.git
 
-## .gitignore Updated ✅
+## .gitignore Updated 
 **New additions:**
 - Environment files (.env, .env.*, etc.)
 - Node modules (both root and package-specific)
